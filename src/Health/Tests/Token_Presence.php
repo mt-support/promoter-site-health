@@ -14,7 +14,7 @@ class Token_Presence implements Runnable {
 
 		if ( $option === null ) {
 			throw new Critical_Exception(
-				'The token for promoter does not exists on this installation, make sure to complete the onboarding process.',
+				'The token for promoter does not exist on this installation. Make sure to complete the onboarding process.',
 				$action
 			);
 		}
