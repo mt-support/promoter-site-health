@@ -1,0 +1,21 @@
+{
+  "name": "mt-support/promoter-site-health",
+  "description": "Extension to validate the connection of a Promoter client.",
+  "minimum-stability": "stable",
+  "license": "GPL-2.0-only",
+  "keywords": [
+    "wordpress",
+    "promoter"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Tribe\\Extensions\\Promoter\\": "src"
+    }
+  },
+  "require": {
+    "firebase/php-jwt": "~5.0.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  }
+}
