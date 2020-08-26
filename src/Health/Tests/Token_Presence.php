@@ -23,7 +23,7 @@ class Token_Presence implements Runnable {
 
 		if ( empty( $option ) ) {
 			throw new Critical_Exception(
-				'The token for promoter exists but is empty, make sure to complete the onboarding process.',
+				'The token for Promoter exists but is empty. Make sure to complete the onboarding process.',
 				$action
 			);
 		}
