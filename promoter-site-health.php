@@ -1,6 +1,9 @@
 <?php
 /**
  * Plugin Name: Promoter Site Health
+ * GitHub Plugin URI: https://github.com/mt-support/promoter-site-health
+ * Author:            Modern Tribe, Inc.
+ * Author URI:        http://m.tri.be/1971
  * Description: Add site health checks to make sure Promoter is working properly.
  * Requires PHP: 7.0
  */

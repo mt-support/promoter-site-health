@@ -72,7 +72,6 @@ class Connection implements Runnable {
 	}
 
 	private function request() {
-		//	$url = $this->base_url() . 'connect/auth';
 		$this->response = wp_remote_post( $this->connector->base_url() . 'connect/auth', [
 			'body'      => [ 'token' => $this->token ],
 			'timeout'   => 30,
@@ -108,7 +107,7 @@ class Connection implements Runnable {
 
 		if ( ! user_can( $user, 'read_private_posts' ) ) {
 			throw new Critical_Exception(
-				"<p>The user <pre>$user->user_email}</pre> Does not have enough permissions to read private posts on this WordPress installation.</p>",
+				"<p>The user <pre>{$user->user_email}</pre> Does not have enough permissions to read private posts on this WordPress installation.</p>",
 				$actions
 			);
 		}

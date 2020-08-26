@@ -36,7 +36,7 @@ class Background_Test {
 				'label' => 'Promoter',
 				'color' => 'blue',
 			],
-			'description' => 'Everything looks correctly in your WordPress installation.',
+			'description' => 'Everything looks correct in your WordPress installation.',
 			'actions'     => sprintf(
 				'<p><a href="%s" target="_blank" rel="noopener noreferrer">Visit your Account</a></p>', esc_url( 'https://promoter.theeventscalendar.com/' )
 			),
