@@ -12,7 +12,7 @@ class License_Presence implements Runnable {
 		$pue = tribe( 'promoter.pue' );
 
 		if ( ! $pue instanceof Tribe__Promoter__PUE ) {
-			throw new Critical_Exception( 'Looks like PUE is not available on this WordPress installation.' );
+			throw new Critical_Exception( 'Looks like the Tribe Plugin Update Engine (PUE) is not available on this WordPress installation.' );
 		}
 
 		if ( $pue->has_license_key() ) {
