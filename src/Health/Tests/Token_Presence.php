@@ -10,12 +10,12 @@ class Token_Presence implements Runnable {
 		$action = sprintf(
 			'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a></p>',
 			esc_url( 'https://promoter.theeventscalendar.com/authorization' ),
-			__( 'Authorize Again', 'tribe_extensions_promoter' )
+			__( 'Authorize Again', 'promoter-site-health' )
 		);
 
 		if ( $option === null ) {
 			throw new Critical_Exception(
-				__( 'The token for promoter does not exist on this installation. Make sure to complete the onboarding process.', 'tribe_extensions_promoter' ),
+				__( 'The token for promoter does not exist on this installation. Make sure to complete the onboarding process.', 'promoter-site-health' ),
 				$action
 			);
 		}
@@ -24,7 +24,7 @@ class Token_Presence implements Runnable {
 
 		if ( empty( $option ) ) {
 			throw new Critical_Exception(
-				__( 'The token for Promoter exists but is empty. Make sure to complete the onboarding process.', 'tribe_extensions_promoter' ),
+				__( 'The token for Promoter exists but is empty. Make sure to complete the onboarding process.', 'promoter-site-health' ),
 				$action
 			);
 		}

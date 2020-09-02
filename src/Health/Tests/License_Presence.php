@@ -13,7 +13,7 @@ class License_Presence implements Runnable {
 
 		if ( ! $pue instanceof Tribe__Promoter__PUE ) {
 			throw new Critical_Exception(
-				__( 'Looks like the Tribe Plugin Update Engine (PUE) is not available on this WordPress installation.', 'tribe_extensions_promoter' )
+				__( 'Looks like the Tribe Plugin Update Engine (PUE) is not available on this WordPress installation.', 'promoter-site-health' )
 			);
 		}
 
@@ -26,8 +26,8 @@ class License_Presence implements Runnable {
 			sprintf(
 				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2%s</a>%3$s</p>',
 				esc_url( 'https://theeventscalendar.com/my-account/' ),
-				__( 'Visit your account', 'tribe_extensions_promoter' ),
-				__( ' to find your license key', 'tribe_extensions_promoter' )
+				__( 'Visit your account', 'promoter-site-health' ),
+				__( ' to find your license key', 'promoter-site-health' )
 			)
 		);
 	}
