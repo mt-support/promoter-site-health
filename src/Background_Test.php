@@ -38,7 +38,9 @@ class Background_Test {
 			],
 			'description' => __( 'Everything looks correct in your WordPress installation.', 'tribe_extensions_promoter' ),
 			'actions'     => sprintf(
-				'<p><a href="%s" target="_blank" rel="noopener noreferrer">Visit your Account</a></p>', esc_url( 'https://promoter.theeventscalendar.com/' )
+				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a></p>',
+				esc_url( 'https://promoter.theeventscalendar.com/' ),
+				__( 'Visit your Account', 'tribe_extensions_promoter' )
 			),
 			'test'        => 'promoter_auth_connection',
 		];

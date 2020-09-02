@@ -11,10 +11,12 @@ class ET implements Runnable {
 		}
 
 		throw new Critical_Exception(
-			'Make sure Event Tickets plugin is installed and activated on this WordPress installation',
+			__( 'Make sure Event Tickets plugin is installed and activated on this WordPress installation', 'tribe_extensions_promoter' ),
 			sprintf(
-				'<p><a href="%s" target="_blank" rel="noopener noreferrer">Download ET</a> plugin</p>',
-				esc_url( 'https://wordpress.org/plugins/event-tickets/' )
+				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>%3$s</p>',
+				esc_url( 'https://wordpress.org/plugins/event-tickets/' ),
+				__( 'Download ET', 'tribe_extensions_promoter' ),
+				__( 'plugin', 'tribe_extensions_promoter' )
 			)
 		);
 	}

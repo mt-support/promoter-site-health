@@ -32,13 +32,13 @@ class Connection implements Runnable {
 		$this->connector = tribe( 'promoter.connector' );
 
 		if ( ! $this->connector instanceof Tribe__Promoter__Connector ) {
-			throw new Critical_Exception( 'The connector class is not defined.' );
+			throw new Critical_Exception( __( 'The connector class is not defined.', 'tribe_extensions_promoter' ) );
 		}
 
 		$license_info = tribe( 'promoter.pue' )->get_license_info();
 
 		if ( empty( $license_info['key'] ) ) {
-			throw new Critical_Exception( 'The license key of promoter is not present.' );
+			throw new Critical_Exception( __( 'The license key of promoter is not present.', 'tribe_extensions_promoter' ) );
 		}
 
 		$payload = [
@@ -50,20 +50,27 @@ class Connection implements Runnable {
 
 		if ( is_wp_error( $this->response ) ) {
 			throw new Critical_Exception(
-				'Error while connecting to the connector application, your site is not able to communicate with the connector site.'
+				__( 'Error while connecting to the connector application, your site is not able to communicate with the connector site.', 'tribe_extensions_promoter' )
 			);
 		}
 
 		if ( $this->code < 200 || $this->code >= 300 ) {
 			$message = sprintf(
-				"<p>Response: %s - Code: %s</p><p>Token: <pre>%s</pre></p><p>%s</p>",
+				"<p>%1$s: %2$s - %3$s: %4$s</p><p>%5$s: <pre>%6$s</pre></p><p>%7$s</p>",
+				__( 'Response', 'tribe_extensions_promoter' ),
 				$this->body,
+				__( 'Code', 'tribe_extensions_promoter' ),
 				$this->code,
+				__( 'Token', 'tribe_extensions_promoter' ),
 				$this->token,
-				"This means that your site can't communicate correctly with WordPress, try to refresh the connection."
+				__( "This means that your site can't communicate correctly with WordPress, try to refresh the connection.", 'tribe_extensions_promoter' )
 			);
 
-			$actions = sprintf( '<p><a href="%s" target="_blank" rel="noopener noreferrer">Authorize Again</a></p>', esc_url( 'https://promoter.theeventscalendar.com/authorization' ) );
+			$actions = sprintf(
+				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a></p>',
+				esc_url( 'https://promoter.theeventscalendar.com/authorization' ),
+				__( 'Authorize Again', 'tribe_extensions_promoter' )
+			);
 
 			throw new Critical_Exception( $message, $actions );
 		}
@@ -87,11 +94,18 @@ class Connection implements Runnable {
 	 */
 	private function validate_user() {
 		$user_id = (int) $this->body;
-		$actions = sprintf( '<p><a href="%s" target="_blank" rel="noopener noreferrer">Authorize Again</a></p>', esc_url( 'https://promoter.theeventscalendar.com/authorization' ) );
+		$actions = sprintf(
+			'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a></p>',
+			esc_url( 'https://promoter.theeventscalendar.com/authorization' ),
+			__( 'Authorize Again', 'tribe_extensions_promoter' )
+		);
 
 		if ( $user_id === 0 ) {
 			throw new Critical_Exception(
-				'<p>Looks like the User ID registered it was not set correctly, as is zero. </p>',
+				sprintf(
+					"<p>%1$s</p>",
+					__( 'Looks like the User ID registered it was not set correctly, as is zero.', 'tribe_extensions_promoter' )
+				),
 				$actions
 			);
 		}
@@ -100,21 +114,36 @@ class Connection implements Runnable {
 
 		if ( false === $user ) {
 			throw new Critical_Exception(
-				"<p>The user with the ID: <strong>{$user_id}</strong> does not exists on this WordPress installation, make sure to use a valid user.</p>",
+				sprintf(
+					"<p>%1$s<strong>%2$s</strong>%3$s</p>",
+					__( 'The user with the ID: ', 'tribe_extensions_promoter' ),
+					$user_id,
+					__( ' does not exists on this WordPress installation, make sure to use a valid user.', 'tribe_extensions_promoter' )
+				),
 				$actions
 			);
 		}
 
 		if ( ! user_can( $user, 'read_private_posts' ) ) {
 			throw new Critical_Exception(
-				"<p>The user <pre>{$user->user_email}</pre> Does not have enough permissions to read private posts on this WordPress installation.</p>",
+				sprintf(
+					"<p>%1$s<pre>%2$s</pre>%3$s</p>",
+					__( 'The user ', 'tribe_extensions_promoter' ),
+					$user->user_email,
+					__( ' Does not have enough permissions to read private posts on this WordPress installation.', 'tribe_extensions_promoter' )
+				),
 				$actions
 			);
 		}
 
 		if ( ! user_can( $user, 'manage_options' ) ) {
 			throw new Critical_Exception(
-				"<p>The user <pre>{$user->user_email}</pre> Does not have enough permissions to manage options on this WordPress installation.</p>",
+				sprintf(
+					"<p>%1$s<pre>%2$s</pre>%3$s</p>",
+					__( 'The user ', 'tribe_extensions_promoter' ),
+					$user->user_email,
+					__( ' Does not have enough permissions to manage options on this WordPress installation.', 'tribe_extensions_promoter' )
+				),
 				$actions
 			);
 		}
