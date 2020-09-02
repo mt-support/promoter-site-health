@@ -6,6 +6,7 @@
  * Author URI:        http://m.tri.be/1971
  * Description: Add site health checks to make sure Promoter is working properly.
  * Requires PHP: 7.0
+ * Text Domain: tribe_extensions_promoter
  */
 
 require_once __DIR__ . '/vendor/autoload.php';

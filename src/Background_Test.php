@@ -29,14 +29,14 @@ class Background_Test {
 		check_ajax_referer( 'health-check-site-status' );
 
 		$result = [
-			'label'       => 'Promoter - Site Health Review',
+			'label'       => __( 'Promoter - Site Health Review', 'tribe_extensions_promoter' ),
 			'completed'   => true,
 			'status'      => 'good',
 			'badge'       => [
-				'label' => 'Promoter',
+				'label' => __( 'Promoter', 'tribe_extensions_promoter' ),
 				'color' => 'blue',
 			],
-			'description' => 'Everything looks correct in your WordPress installation.',
+			'description' => __( 'Everything looks correct in your WordPress installation.', 'tribe_extensions_promoter' ),
 			'actions'     => sprintf(
 				'<p><a href="%s" target="_blank" rel="noopener noreferrer">Visit your Account</a></p>', esc_url( 'https://promoter.theeventscalendar.com/' )
 			),
