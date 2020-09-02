@@ -1,13 +1,16 @@
 <?php
 /**
- * Plugin Name: Promoter Site Health
- * GitHub Plugin URI: https://github.com/mt-support/promoter-site-health
- * Author:            Modern Tribe, Inc.
- * Author URI:        http://m.tri.be/1971
- * Description: Add site health checks to make sure Promoter is working properly.
- * License:           GPL version 3 or any later version
- * Requires PHP: 7.0
- * Text Domain: promoter-site-health
+ * Plugin Name:         Promoter Site Health
+ * GitHub Plugin URI:   https://github.com/mt-support/promoter-site-health
+ * Author:              Modern Tribe, Inc.
+ * Author URI:          http://m.tri.be/1971
+ * Description:         Add site health checks to make sure Promoter is working properly.
+ * License:             GPL version 3 or any later version
+ * License URI:         https://www.gnu.org/licenses/gpl-3.0.txt
+ * Version:             1.0.0
+ * Requires PHP:        7.0
+ * Domain Path:         /languages
+ * Text Domain:         promoter-site-health
  *
  *     This plugin is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
