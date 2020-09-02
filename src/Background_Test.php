@@ -29,18 +29,18 @@ class Background_Test {
 		check_ajax_referer( 'health-check-site-status' );
 
 		$result = [
-			'label'       => __( 'Promoter - Site Health Review', 'promoter-site-health' ),
+			'label'       => esc_html__( 'Promoter - Site Health Review', 'promoter-site-health' ),
 			'completed'   => true,
 			'status'      => 'good',
 			'badge'       => [
-				'label' => __( 'Promoter', 'promoter-site-health' ),
+				'label' => esc_html__( 'Promoter', 'promoter-site-health' ),
 				'color' => 'blue',
 			],
-			'description' => __( 'Everything looks correct in your WordPress installation.', 'promoter-site-health' ),
+			'description' => esc_html__( 'Everything looks correct in your WordPress installation.', 'promoter-site-health' ),
 			'actions'     => sprintf(
 				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a></p>',
 				esc_url( 'https://promoter.theeventscalendar.com/' ),
-				__( 'Visit your Account', 'promoter-site-health' )
+				esc_html__( 'Visit your Account', 'promoter-site-health' )
 			),
 			'test'        => 'promoter_auth_connection',
 		];

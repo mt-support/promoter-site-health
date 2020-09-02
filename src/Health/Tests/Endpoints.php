@@ -11,7 +11,7 @@ class Endpoints implements Runnable {
 		$this->connector = tribe( 'promoter.connector' );
 
 		if ( ! $this->connector instanceof Tribe__Promoter__Connector ) {
-			throw new Critical_Exception( __( 'The connector class is not defined.', 'promoter-site-health' ) );
+			throw new Critical_Exception( esc_html__( 'The connector class is not defined.', 'promoter-site-health' ) );
 		}
 
 		$endpoints = [
@@ -22,13 +22,13 @@ class Endpoints implements Runnable {
 		foreach ( $endpoints as $endpoint ) {
 			$response = wp_remote_get( $endpoint, [
 				'timeout'   => 30,
-				'sslverify' => false,
+				'sslverify' => false, // SSL disabled to allow local URL to be pinged.
 			] );
 
 			if ( is_wp_error( $response ) ) {
 				throw new Critical_Exception(
 					sprintf(
-						__( "The endpoint: '%1$s' is not returning a valid response.", 'promoter-site-health' ),
+						esc_html__( "The endpoint: '%1$s' is not returning a valid response.", 'promoter-site-health' ),
 						$endpoint
 					)
 				);
@@ -39,7 +39,7 @@ class Endpoints implements Runnable {
 			if ( $json === null || empty( $json ) ) {
 				throw new Critical_Exception(
 					sprintf(
-						__( "The endpoint: '%1$s' does not return a valid JSON response.", 'promoter-site-health' ),
+						esc_html__( "The endpoint: '%1$s' does not return a valid JSON response.", 'promoter-site-health' ),
 						$endpoint
 					)
 				);
@@ -50,7 +50,7 @@ class Endpoints implements Runnable {
 			if ( $code < 200 || $code >= 300 ) {
 				throw new Critical_Exception(
 					sprintf(
-						__( "The endpoint: '%1$s' is not reachable, make sure it returns a valid response.", 'promoter-site-health' ),
+						esc_html__( "The endpoint: '%1$s' is not reachable, make sure it returns a valid response.", 'promoter-site-health' ),
 						$endpoint
 					)
 				);

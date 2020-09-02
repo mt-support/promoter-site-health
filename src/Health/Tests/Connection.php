@@ -32,13 +32,13 @@ class Connection implements Runnable {
 		$this->connector = tribe( 'promoter.connector' );
 
 		if ( ! $this->connector instanceof Tribe__Promoter__Connector ) {
-			throw new Critical_Exception( __( 'The connector class is not defined.', 'promoter-site-health' ) );
+			throw new Critical_Exception( esc_html__( 'The connector class is not defined.', 'promoter-site-health' ) );
 		}
 
 		$license_info = tribe( 'promoter.pue' )->get_license_info();
 
 		if ( empty( $license_info['key'] ) ) {
-			throw new Critical_Exception( __( 'The license key of promoter is not present.', 'promoter-site-health' ) );
+			throw new Critical_Exception( esc_html__( 'The license key of promoter is not present.', 'promoter-site-health' ) );
 		}
 
 		$payload = [
@@ -50,26 +50,26 @@ class Connection implements Runnable {
 
 		if ( is_wp_error( $this->response ) ) {
 			throw new Critical_Exception(
-				__( 'Error while connecting to the connector application, your site is not able to communicate with the connector site.', 'promoter-site-health' )
+				esc_html__( 'Error while connecting to the connector application, your site is not able to communicate with the connector site.', 'promoter-site-health' )
 			);
 		}
 
 		if ( $this->code < 200 || $this->code >= 300 ) {
 			$message = sprintf(
 				"<p>%1$s: %2$s - %3$s: %4$s</p><p>%5$s: <pre>%6$s</pre></p><p>%7$s</p>",
-				__( 'Response', 'promoter-site-health' ),
+				esc_html_x( 'Response', 'The HTTP response from the server', 'promoter-site-health' ),
 				$this->body,
-				__( 'Code', 'promoter-site-health' ),
+				esc_html_x( 'Code', 'The error code that was generated for this error', 'promoter-site-health' ),
 				$this->code,
-				__( 'Token', 'promoter-site-health' ),
+				esc_html_x( 'Token', 'The token string associated with this error', 'promoter-site-health' ),
 				$this->token,
-				__( "This means that your site can't communicate correctly with WordPress, try to refresh the connection.", 'promoter-site-health' )
+				esc_html__( "This means that your site can't communicate correctly with WordPress, try to refresh the connection.", 'promoter-site-health' )
 			);
 
 			$actions = sprintf(
 				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a></p>',
 				esc_url( 'https://promoter.theeventscalendar.com/authorization' ),
-				__( 'Authorize Again', 'promoter-site-health' )
+				esc_html__( 'Authorize Again', 'promoter-site-health' )
 			);
 
 			throw new Critical_Exception( $message, $actions );
@@ -82,7 +82,7 @@ class Connection implements Runnable {
 		$this->response = wp_remote_post( $this->connector->base_url() . 'connect/auth', [
 			'body'      => [ 'token' => $this->token ],
 			'timeout'   => 30,
-			'sslverify' => false,
+			'sslverify' => false, // SSL disabled to allow local URL to be pinged.
 		] );
 
 		$this->code = (int) wp_remote_retrieve_response_code( $this->response );
@@ -97,14 +97,14 @@ class Connection implements Runnable {
 		$actions = sprintf(
 			'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a></p>',
 			esc_url( 'https://promoter.theeventscalendar.com/authorization' ),
-			__( 'Authorize Again', 'promoter-site-health' )
+			esc_html__( 'Authorize Again', 'promoter-site-health' )
 		);
 
 		if ( $user_id === 0 ) {
 			throw new Critical_Exception(
 				sprintf(
 					"<p>%1$s</p>",
-					__( 'Looks like the User ID registered it was not set correctly, as is zero.', 'promoter-site-health' )
+					esc_html__( 'Looks like the User ID registered it was not set correctly, as is zero.', 'promoter-site-health' )
 				),
 				$actions
 			);
@@ -116,9 +116,9 @@ class Connection implements Runnable {
 			throw new Critical_Exception(
 				sprintf(
 					"<p>%1$s<strong>%2$s</strong>%3$s</p>",
-					__( 'The user with the ID: ', 'promoter-site-health' ),
+					esc_html__( 'The user with the ID: ', 'promoter-site-health' ),
 					$user_id,
-					__( ' does not exists on this WordPress installation, make sure to use a valid user.', 'promoter-site-health' )
+					esc_html__( ' does not exists on this WordPress installation, make sure to use a valid user.', 'promoter-site-health' )
 				),
 				$actions
 			);
@@ -128,9 +128,9 @@ class Connection implements Runnable {
 			throw new Critical_Exception(
 				sprintf(
 					"<p>%1$s<pre>%2$s</pre>%3$s</p>",
-					__( 'The user ', 'promoter-site-health' ),
+					esc_html__( 'The user ', 'promoter-site-health' ),
 					$user->user_email,
-					__( ' Does not have enough permissions to read private posts on this WordPress installation.', 'promoter-site-health' )
+					esc_html__( ' Does not have enough permissions to read private posts on this WordPress installation.', 'promoter-site-health' )
 				),
 				$actions
 			);
@@ -140,9 +140,9 @@ class Connection implements Runnable {
 			throw new Critical_Exception(
 				sprintf(
 					"<p>%1$s<pre>%2$s</pre>%3$s</p>",
-					__( 'The user ', 'promoter-site-health' ),
+					esc_html__( 'The user ', 'promoter-site-health' ),
 					$user->user_email,
-					__( ' Does not have enough permissions to manage options on this WordPress installation.', 'promoter-site-health' )
+					esc_html__( ' Does not have enough permissions to manage options on this WordPress installation.', 'promoter-site-health' )
 				),
 				$actions
 			);

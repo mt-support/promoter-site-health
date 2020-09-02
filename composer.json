@@ -2,7 +2,7 @@
   "name": "mt-support/promoter-site-health",
   "description": "Extension to validate the connection of a Promoter client.",
   "minimum-stability": "stable",
-  "license": "GPL-2.0-only",
+  "license": "GPL-3.0-or-later",
   "keywords": [
     "wordpress",
     "promoter"

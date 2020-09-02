@@ -8,7 +8,7 @@ class Functions_Requirements implements Runnable {
 	public function run() {
 		if ( ! function_exists( 'tribe' ) ) {
 			throw new Critical_Exception(
-				__( "Make sure the function 'tribe' exists in order to execute the tests.", 'promoter-site-health' )
+				esc_html__( "Make sure the function 'tribe' exists in order to execute the tests.", 'promoter-site-health' )
 			);
 		}
 	}
