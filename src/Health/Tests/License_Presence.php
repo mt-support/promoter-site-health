@@ -26,8 +26,8 @@ class License_Presence implements Runnable {
 			sprintf(
 				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2%s</a>%3$s</p>',
 				esc_url( 'https://theeventscalendar.com/my-account/' ),
-				__( 'Visit your account', 'promoter-site-health' ),
-				__( ' to find your license key', 'promoter-site-health' )
+				esc_html__( 'Visit your account', 'promoter-site-health' ),
+				esc_html__( ' to find your license key', 'promoter-site-health' )
 			)
 		);
 	}
