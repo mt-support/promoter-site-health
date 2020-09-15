@@ -13,7 +13,7 @@ class TEC implements Runnable {
 		throw new Critical_Exception(
 			esc_html__( 'Make sure The Events Calendar plugin is installed and activated on this WordPress installation', 'promoter-site-health' ),
 			sprintf(
-				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>%3$s</p>',
+				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a> %3$s</p>',
 				esc_url( 'https://wordpress.org/plugins/the-events-calendar/' ),
 				esc_html__( 'Download The Events Calendar', 'promoter-site-health' ),
 				esc_html_x( ' plugin', 'Describing a plugin name before this translation.', 'promoter-site-health' )

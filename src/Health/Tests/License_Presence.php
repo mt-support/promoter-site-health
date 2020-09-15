@@ -24,7 +24,7 @@ class License_Presence implements Runnable {
 		throw new Recommended_Exception(
 			'Make sure a Promoter license key exists.',
 			sprintf(
-				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2%s</a>%3$s</p>',
+				'<p><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>%3$s</p>',
 				esc_url( 'https://theeventscalendar.com/my-account/' ),
 				esc_html__( 'Visit your account', 'promoter-site-health' ),
 				esc_html__( ' to find your license key', 'promoter-site-health' )
