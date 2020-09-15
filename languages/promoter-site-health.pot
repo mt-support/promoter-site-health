@@ -1,0 +1,167 @@
+# Copyright (C) 2020 Modern Tribe, Inc.
+# This file is distributed under the same license as the Promoter Site Health plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Promoter Site Health 1.0.0\n"
+"Report-Msgid-Bugs-To: Modern Tribe, Inc. <https://support.theeventscalendar.com/>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-09-15T23:03:23+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: promoter-site-health\n"
+
+#. Plugin Name of the plugin
+msgid "Promoter Site Health"
+msgstr ""
+
+#. Description of the plugin
+msgid "Add site health checks to make sure Promoter is working properly."
+msgstr ""
+
+#. Author of the plugin
+msgid "Modern Tribe, Inc."
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://m.tri.be/1971"
+msgstr ""
+
+#: src/Background_Test.php:32
+msgid "Promoter - Site Health Review"
+msgstr ""
+
+#: src/Background_Test.php:36
+msgid "Promoter"
+msgstr ""
+
+#: src/Background_Test.php:39
+msgid "Everything looks correct in your WordPress installation."
+msgstr ""
+
+#: src/Background_Test.php:43
+msgid "Visit your Account"
+msgstr ""
+
+#: src/Health/Tests/Connection.php:35
+#: src/Health/Tests/Endpoints.php:14
+msgid "The connector class is not defined."
+msgstr ""
+
+#: src/Health/Tests/Connection.php:41
+msgid "The license key of promoter is not present."
+msgstr ""
+
+#: src/Health/Tests/Connection.php:53
+msgid "Error while connecting to the connector application, your site is not able to communicate with the connector site."
+msgstr ""
+
+#: src/Health/Tests/Connection.php:60
+msgctxt "The HTTP response from the server"
+msgid "Response"
+msgstr ""
+
+#: src/Health/Tests/Connection.php:62
+msgctxt "The error code that was generated for this error"
+msgid "Code"
+msgstr ""
+
+#: src/Health/Tests/Connection.php:64
+msgctxt "The token string associated with this error"
+msgid "Token"
+msgstr ""
+
+#: src/Health/Tests/Connection.php:66
+msgid "This means that your site can't communicate correctly with WordPress, try to refresh the connection."
+msgstr ""
+
+#: src/Health/Tests/Connection.php:72
+#: src/Health/Tests/Connection.php:100
+msgid "Authorize Again"
+msgstr ""
+
+#: src/Health/Tests/Connection.php:107
+msgid "Looks like the User ID registered it was not set correctly, as is zero."
+msgstr ""
+
+#: src/Health/Tests/Connection.php:119
+msgid "The user with the ID: "
+msgstr ""
+
+#: src/Health/Tests/Connection.php:121
+msgid " does not exists on this WordPress installation, make sure to use a valid user."
+msgstr ""
+
+#: src/Health/Tests/Connection.php:131
+#: src/Health/Tests/Connection.php:143
+msgid "The user "
+msgstr ""
+
+#: src/Health/Tests/Connection.php:133
+msgid " Does not have enough permissions to read private posts on this WordPress installation."
+msgstr ""
+
+#: src/Health/Tests/Connection.php:145
+msgid " Does not have enough permissions to manage options on this WordPress installation."
+msgstr ""
+
+#: src/Health/Tests/ET.php:14
+msgid "Make sure Event Tickets plugin is installed and activated on this WordPress installation"
+msgstr ""
+
+#: src/Health/Tests/ET.php:18
+msgid "Download Event Tickets"
+msgstr ""
+
+#: src/Health/Tests/ET.php:19
+msgctxt "Describing a plugin name before this translation."
+msgid "plugin"
+msgstr ""
+
+#: src/Health/Tests/Functions_Requirements.php:11
+msgid "Make sure the function 'tribe' exists in order to execute the tests."
+msgstr ""
+
+#: src/Health/Tests/License_Presence.php:16
+msgid "Looks like the Tribe Plugin Update Engine (PUE) is not available on this WordPress installation."
+msgstr ""
+
+#: src/Health/Tests/License_Presence.php:29
+msgid "Visit your account"
+msgstr ""
+
+#: src/Health/Tests/License_Presence.php:30
+msgid " to find your license key"
+msgstr ""
+
+#: src/Health/Tests/TEC.php:14
+msgid "Make sure The Events Calendar plugin is installed and activated on this WordPress installation"
+msgstr ""
+
+#: src/Health/Tests/TEC.php:18
+msgid "Download The Events Calendar"
+msgstr ""
+
+#: src/Health/Tests/TEC.php:19
+msgctxt "Describing a plugin name before this translation."
+msgid " plugin"
+msgstr ""
+
+#: src/Health/Tests/Token_Presence.php:13
+msgid "Authorize again"
+msgstr ""
+
+#: src/Health/Tests/Token_Presence.php:18
+msgid "The token for promoter does not exist on this installation. Make sure to complete the onboarding process."
+msgstr ""
+
+#: src/Health/Tests/Token_Presence.php:27
+msgid "The token for Promoter exists but is empty. Make sure to complete the onboarding process."
+msgstr ""
+
+#: src/Site_Health.php:8
+msgid "Promoter can communicate with the Connector App"
+msgstr ""
