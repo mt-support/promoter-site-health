@@ -1,9 +1,9 @@
 <?php
 
-namespace Tribe\Extensions\Promoter\Health\Tests;
+namespace TEC\Extensions\Promoter\Health\Tests;
 
-use Firebase\JWT\JWT;
-use Tribe\Extensions\Promoter\Health\Critical_Exception;
+use TEC\Common\Firebase\JWT\JWT;
+use TEC\Extensions\Promoter\Health\Critical_Exception;
 use Tribe__Promoter__Connector;
 
 class Connection implements Runnable {

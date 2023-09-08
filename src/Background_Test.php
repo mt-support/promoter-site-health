@@ -1,18 +1,18 @@
 <?php
 
 
-namespace Tribe\Extensions\Promoter;
+namespace TEC\Extensions\Promoter;
 
 
-use Tribe\Extensions\Promoter\Health\Health_Exception;
-use Tribe\Extensions\Promoter\Health\Tests\Connection;
-use Tribe\Extensions\Promoter\Health\Tests\Endpoints;
-use Tribe\Extensions\Promoter\Health\Tests\ET;
-use Tribe\Extensions\Promoter\Health\Tests\Functions_Requirements;
-use Tribe\Extensions\Promoter\Health\Tests\License_Presence;
-use Tribe\Extensions\Promoter\Health\Tests\Runnable;
-use Tribe\Extensions\Promoter\Health\Tests\TEC;
-use Tribe\Extensions\Promoter\Health\Tests\Token_Presence;
+use TEC\Extensions\Promoter\Health\Health_Exception;
+use TEC\Extensions\Promoter\Health\Tests\Connection;
+use TEC\Extensions\Promoter\Health\Tests\Endpoints;
+use TEC\Extensions\Promoter\Health\Tests\ET;
+use TEC\Extensions\Promoter\Health\Tests\Functions_Requirements;
+use TEC\Extensions\Promoter\Health\Tests\License_Presence;
+use TEC\Extensions\Promoter\Health\Tests\Runnable;
+use TEC\Extensions\Promoter\Health\Tests\TEC;
+use TEC\Extensions\Promoter\Health\Tests\Token_Presence;
 
 class Background_Test {
 	public static $tests = [

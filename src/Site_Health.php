@@ -1,6 +1,6 @@
 <?php
 
-namespace Tribe\Extensions\Promoter;
+namespace TEC\Extensions\Promoter;
 
 class Site_Health {
 	public static function add_status_test( array $tests ): array {

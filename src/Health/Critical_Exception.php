@@ -1,6 +1,6 @@
 <?php
 
-namespace Tribe\Extensions\Promoter\Health;
+namespace TEC\Extensions\Promoter\Health;
 
 use Exception;
 

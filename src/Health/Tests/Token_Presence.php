@@ -1,8 +1,8 @@
 <?php
 
-namespace Tribe\Extensions\Promoter\Health\Tests;
+namespace TEC\Extensions\Promoter\Health\Tests;
 
-use Tribe\Extensions\Promoter\Health\Critical_Exception;
+use TEC\Extensions\Promoter\Health\Critical_Exception;
 
 class Token_Presence implements Runnable {
 	public function run() {

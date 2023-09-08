@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Tribe\Extensions\Promoter\Health\Tests;
+namespace TEC\Extensions\Promoter\Health\Tests;
 
 
-use Tribe\Extensions\Promoter\Health\Health_Exception;
+use TEC\Extensions\Promoter\Health\Health_Exception;
 
 interface Runnable {
 	/**
